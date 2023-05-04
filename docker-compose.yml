@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  finance-db:
+    image: mysql/mysql-server:latest
+    restart: unless-stopped
+    volumes:
+      - finance-dbdata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=finance_app
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+
+  finance-app:
+    image: officialdarnyc/sesc-finance-app:v2
+    environment:
+      - APP_KEY=${APP_KEY}
+      - DB_CONNECTION=mysql
+      - DB_HOST=finance-db
+      - DB_PORT=3306
+      - DB_DATABASE=finance_app
+      - DB_USERNAME=root
+      - DB_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "8000:80"
+    depends_on:
+      - finance-db
+
+volumes:
+  finance-dbdata:
