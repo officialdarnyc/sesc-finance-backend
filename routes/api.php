@@ -29,7 +29,7 @@ Route::group(["prefix" => "accounts"], function () {
 Route::group(["prefix" => "invoices"], function () {
     Route::post('/', Invoice\CreateInvoiceHandler::class);
     Route::get('/', Invoice\ListInvoicesHandler::class);
-    Route::get('/reference/{referenceId}', Invoice\GetInvoiceByReferenceHandler::class);
-    Route::put('/{referenceId}/pay', Invoice\PayInvoiceHandler::class);
-    Route::delete('/{referenceId}/cancel', Invoice\CancelInvoiceHandler::class);
+    Route::get('/reference/{reference}', Invoice\GetInvoiceByReferenceHandler::class);
+    Route::put('/{reference}/pay', Invoice\PayInvoiceHandler::class);
+    Route::delete('/{reference}/cancel', Invoice\CancelInvoiceHandler::class);
 });
