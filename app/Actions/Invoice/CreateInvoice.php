@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Actions\Invoice;
+
+use App\Models\Account;
 use Illuminate\Support\Str;
 use App\Models\Invoice;
 
@@ -16,6 +18,12 @@ class CreateInvoice{
             'status' => 'OUTSTANDING',
             'studentId' => $data['account']['studentId'],
         ]);
+
+      Account::where('studentId', $invoice->studentId)
+                    ->first()
+                    ->update([
+                        "hasOutstandingBalance" => true
+                    ]);
 
         return $invoice;
     }

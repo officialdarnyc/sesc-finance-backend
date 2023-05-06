@@ -13,7 +13,7 @@ This is a simple microservices-based application which exposes a RESTful API. It
 
 ## Integrations
 ### 1. Database
-The application integrates with a MariaDB relational database.</br>
+The application integrates with a MYSQL relational database.</br>
 Scripts to create the database schema can be found in the migrations folder and are run automatically by docker-compose.
 
 ### 2. Student
