@@ -13,7 +13,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
 
   finance-app:
-    image: officialdarnyc/sesc-finance-app:v2
+    image: officialdarnyc/sesc-finance-app:v3
     environment:
       - APP_KEY=${APP_KEY}
       - DB_CONNECTION=mysql
