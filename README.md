@@ -1,7 +1,7 @@
 # Finance Application
 This is a simple microservices-based application which exposes a RESTful API. It is written in Java using the Spring Boot framework. It is intended for use as part of the SESC module at Leeds Beckett University.
 
-![component diagram](resources/images/finance.png "Component Diagram")
+![component diagram](public/uml.png "Component Diagram")
 
 ## Features
 1. Create Account - create a finance account by passing a student ID.
