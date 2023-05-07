@@ -29,8 +29,7 @@ The application integrates with the [Library microservice](https://github.com/Ai
 
 ## Run using Docker Compose
 1. Rename the `.env.example` file inside the `finance` directory to `.env`:<br/>
-2. Generate a random key and add it as a value for `APP_KEY`
-3. From the `finance` directory, run the app and db services:<br/>
+2. From the `finance` directory, run the app and db services:<br/>
    `docker-compose up -d`
 
 ## Test using Postman
